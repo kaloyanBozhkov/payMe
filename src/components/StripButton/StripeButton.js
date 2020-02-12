@@ -7,8 +7,7 @@ import pat from '../../assets/pat.png'
 import styles from './stripebutton.module.scss'
 
 const StripeButton = ({ currency, amount, setCompleteTransaction = f => f }) => {
-    console.log('process.env', process.env.PUB_KEY)
-    const publishableKey = process.env.PUB_KEY
+    const publishableKey = process.env.REACT_APP_PUB_KEY
     //strope wants to see the amounts in cents
     const priceForStripe = 100 * amount
 

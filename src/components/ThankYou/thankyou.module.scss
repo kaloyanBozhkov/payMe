@@ -1,0 +1,65 @@
+.thankYouSvg {
+  width: 600px;
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  z-index: 0;
+  width: 100%;
+  @media (min-width: 1200px) {
+    width: 1200px;
+  }
+  text {
+    fill: #fff;
+    font-family: "Oswald";
+    font-weight: 700;
+
+    tspan {
+      padding: 0;
+      margin: 0;
+      opacity: 0;
+    }
+  }
+
+  line,
+  polyline,
+  ellipse,
+  path {
+    stroke: #fff;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 6;
+    opacity: 0;
+    stroke-miterlimit: 10;
+  }
+
+  .dec {
+    stroke-width: 3;
+  }
+
+  .underline {
+    stroke-width: 6;
+    stroke-linecap: butt;
+    opacity: 1;
+  }
+
+  .dot {
+    opacity: 1;
+  }
+
+  .purple {
+    stroke: #b191ff;
+  }
+
+  .lime {
+    stroke: #dce2aa;
+  }
+
+  .plum {
+    stroke: #843b62;
+  }
+
+  .blue {
+    stroke: #241e4e;
+  }
+}

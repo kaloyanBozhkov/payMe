@@ -1,0 +1,45 @@
+@keyframes enterSwipe {
+  0% {
+    transform:translateX(-100%);
+  }
+  100% {
+    transform:translateX(0);
+  }
+}
+@keyframes enterText {
+  0% {
+    transform:translateY(3rem);
+    opacity:0;
+  }
+  40%{
+    transform:translateY(3rem);
+    opacity:0;
+  }
+  70% {
+    transform:translateY(0);
+    opacity:1;
+  }
+}
+
+.container {
+  background: #ce526f;
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  animation-name:enterSwipe;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+
+  > h1 {
+    color: white;
+    animation-name:enterText;
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+    font-size: 4rem;
+    padding: 0;
+    line-height: 0rem;
+  }
+}

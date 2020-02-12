@@ -6,10 +6,17 @@
 }
 
 html {
-  font-size: 5px;
+  font-size: 3px;
 
+  @media (min-width: 500px) {
+    font-size: 5px;
+  }
   @media (min-width: 1700px) {
     font-size: 10px;
+  }
+
+  @media (max-height: 600px) {
+    font-size: 3px;
   }
 }
 

@@ -14,28 +14,28 @@ const StripeButton = ({ currency, amount, setCompleteTransaction = f => f }) => 
     //send token with card info to backend to create customer & payment
     const completePayment = (token) => fetch(process.env.REACT_APP_API_URL + '/checkout', {
         method: 'POST',
-        headers: {'Content-Type': 'application/json'},
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
             amount: priceForStripe,
             currency,
             token
         })
     })
-    .then((res) => res.json())
-    .then((data) => {
-        if (data.status === 'success') { 
-            setCompleteTransaction(true)
-        } else {
-            console.log('There was a problem during your attempt at paying Koko :(', data)
+        .then((res) => res.json())
+        .then((data) => {
+            if (data.status === 'success') {
+                setCompleteTransaction(true)
+            } else {
+                console.log('There was a problem during your attempt at paying Koko :(', data)
+                alert('There was a problem during your attempt at paying Koko :(')
+            }
+        }).catch((error) => {
+            console.log('There was a problem during your attempt at paying Koko :(', error)
             alert('There was a problem during your attempt at paying Koko :(')
-        }
-    }).catch((error) => {
-        console.log('There was a problem during your attempt at paying Koko :(', error)
-        alert('There was a problem during your attempt at paying Koko :(')
-    })
+        })
 
     return (
-        <StripeCheckout 
+        <StripeCheckout
             name="Some green love" // the pop-in header title
             description={`cuz he loves me & I luv him double`}
             image={pat}
@@ -45,7 +45,7 @@ const StripeButton = ({ currency, amount, setCompleteTransaction = f => f }) => 
             token={completePayment}
             stripeKey={publishableKey}
             ComponentClass="div"
-        >   
+        >
             <button className={styles.stripeButton}>Pay with green love</button>
         </StripeCheckout>
     )

@@ -14,13 +14,13 @@ const StripeButton = ({ currency, amount, setCompleteTransaction = f => f }) => 
     //send token with card info to backend to create customer & payment
     const completePayment = (token) => fetch(process.env.REACT_APP_API_URL + '/checkout', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', mode: 'no-cors' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
             amount: priceForStripe,
             currency,
             token
         }),
-     
+        mode: 'no-cors'
     })
         .then((res) => res.json())
         .then((data) => {

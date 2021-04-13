@@ -19,7 +19,8 @@ const StripeButton = ({ currency, amount, setCompleteTransaction = f => f }) => 
             amount: priceForStripe,
             currency,
             token
-        })
+        }),
+        mode: 'no-cors',
     })
         .then((res) => res.json())
         .then((data) => {
